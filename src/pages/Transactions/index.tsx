@@ -1,6 +1,7 @@
 import { useContextSelector } from 'use-context-selector';
 import { Header } from '../../components/Header';
 import { Summary } from '../../components/Summary';
+import { ModalProvider } from '../../contexts/ModalContext';
 import { TransactionsContext } from '../../contexts/TransactionsContext';
 import { dateFormatter, priceFormatter } from '../../utils/formatter';
 import { SearchForm } from './components/SearchForm';
@@ -14,7 +15,9 @@ export function Transactions() {
 
   return (
     <div>
-      <Header />
+      <ModalProvider>
+        <Header />
+      </ModalProvider>
       <Summary />
 
       <TransactionsContainer>
